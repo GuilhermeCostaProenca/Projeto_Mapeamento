@@ -2,11 +2,12 @@ const LeadService = require('../services/leadService');
 
 const listarLeads = async (req, res) => {
   try {
-    const leads = await LeadService.listarLeads();
+    const filtros = req.query;
+    const leads = await LeadService.listarLeads(filtros);
     res.json(leads);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensagem: 'Erro ao listar leads.' });
+    console.error('Erro ao listar leads:', error);
+    res.status(500).json({ mensagem: 'Erro ao listar leads.', erro: error.message });
   }
 };
 
@@ -15,8 +16,8 @@ const criarLead = async (req, res) => {
     const novoLead = await LeadService.criarLead(req.body);
     res.status(201).json(novoLead);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensagem: 'Erro ao criar lead.' });
+    console.error('Erro ao criar lead:', error);
+    res.status(500).json({ mensagem: 'Erro ao criar lead.', erro: error.message });
   }
 };
 
