@@ -1,0 +1,23 @@
+# Node
+node_modules/
+.env
+
+# Logs
+logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Banco de Dados local (se gerar arquivos)
+*.sqlite
+*.db
+
+# Configs IDE
+.vscode/
+.idea/
+
+# Outros
+dist/
+build/
