@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const { listarLeads, criarLead } = require('../controllers/leadController');
 
-// Aqui futuramente vamos importar o controller
-router.get('/brutos', (req, res) => {
-  res.json({ mensagem: 'Listando leads brutos' });
-});
+// Rota para listar leads brutos
+router.get('/brutos', listarLeads);
 
-router.get('/validados', (req, res) => {
-  res.json({ mensagem: 'Listando leads validados' });
-});
+// Rota para criar novo lead bruto
+router.post('/brutos', criarLead);
 
 module.exports = router;
