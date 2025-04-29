@@ -21,3 +21,5 @@ module.exports = app;
 const leadValidadoRoutes = require('./routes/leadValidadoRoutes');
 app.use('/api/leads-validados', leadValidadoRoutes);
 
+const clienteAtivoRoutes = require('./routes/clienteAtivoRoutes');
+app.use('/api/clientes-ativos', clienteAtivoRoutes);
