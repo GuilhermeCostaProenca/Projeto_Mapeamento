@@ -11,14 +11,4 @@ const listarLeads = async (req, res) => {
   }
 };
 
-const criarLead = async (req, res) => {
-  try {
-    const novoLead = await LeadService.criarLead(req.body);
-    res.status(201).json(novoLead);
-  } catch (error) {
-    console.error('Erro ao criar lead:', error);
-    res.status(500).json({ mensagem: 'Erro ao criar lead.', erro: error.message });
-  }
-};
-
-module.exports = { listarLeads, criarLead };
+module.exports = { listarLeads };

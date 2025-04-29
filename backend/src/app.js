@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 // Rotas específicas (depois vamos modularizar)
 const leadRoutes = require('./routes/leadRoutes');
-app.use('/api/leads', leadRoutes);
+app.use('/api/leads/brutos', leadRoutes);
 
 module.exports = app;
 
